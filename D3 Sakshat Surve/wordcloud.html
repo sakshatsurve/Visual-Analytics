@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Urban Trajectory Visualization System</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Leaflet Map Style -->
+	<link href="css/leaflet.css" rel="stylesheet"/>
+	<link href="css/leaflet.draw.css" rel="stylesheet"/>
+	<!-- Your Style -->
+    <link href="css/MyCSS.css" rel="stylesheet">
+
+	  <!-- D3 libraries -->
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3-color.v1.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+	  <script src="https://d3js.org/d3.v5.min.js"></script>
+	  <script src="js/d3.layout.cloud.js"></script>
+	<!-- Leaflet Map api -->
+	<script src="js/leaflet-src.js"></script>
+	<script src="js/Leaflet.draw.js"></script>
+	<script src="js/edit/handler/Edit.Poly.js"></script>
+	<script src="js/edit/handler/Edit.SimpleShape.js"></script>
+	<script src="js/edit/handler/Edit.Circle.js"></script>
+	<script src="js/edit/handler/Edit.Rectangle.js"></script>
+
+	<script src="js/draw/handler/Draw.Feature.js"></script>
+	<script src="js/draw/handler/Draw.Polyline.js"></script>
+	<script src="js/draw/handler/Draw.Polygon.js"></script>
+	<script src="js/draw/handler/Draw.SimpleShape.js"></script>
+	<script src="js/draw/handler/Draw.Rectangle.js"></script>
+	<script src="js/draw/handler/Draw.Circle.js"></script>
+	<script src="js/draw/handler/Draw.Marker.js"></script>
+
+	<script src="js/ext/LatLngUtil.js"></script>
+	<script src="js/ext/GeometryUtil.js"></script>
+	<script src="js/ext/LineUtil.Intersect.js"></script>
+	<script src="js/ext/Polyline.Intersect.js"></script>
+	<script src="js/ext/Polygon.Intersect.js"></script>
+
+	<script src="js/Control.Draw.js"></script>
+	<script src="js/Tooltip.js"></script>
+	<script src="js/Toolbar.js"></script>
+
+	<script src="js/draw/DrawToolbar.js"></script>
+	<script src="js/edit/EditToolbar.js"></script>
+	<script src="js/edit/handler/EditToolbar.Edit.js"></script>
+	<script src="js/edit/handler/EditToolbar.Delete.js"></script>
+	<script src="js/communist.js"></script>
+	<script src="js/TArr.js"></script>
+		<style>
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 1000px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+</style>
+
+  </head>
+  <body style="background-color: white;">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="header">
+				<a class="logo">Urban Trajectory Visualization System</a>
+				<div class="header-right">
+					<a href="sankey.html">Sankey Diagram</a>
+					<a href="wordcloud.html" class="active">Word Cloud</a>
+					<a href="scatterMatrix.html">Scatter Matrix</a>
+				</div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+	 <div id="map" style="width:100%; height: 100%;"></div><br><br>
+   <h1 style="color:black; text-align: center; "> Word Cloud of Streets</h1><br>
+    <div id="chart"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<!-- Your js File -->
+    <script src="js/wordcloud.js"></script>
+  </body>
+</html>
